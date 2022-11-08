@@ -83,10 +83,12 @@ color: #F8F9FA;
   position: sticky;
   left:10;
     
+  margin-top: 30px;
 }
 .list-left .fa-solid {
     font-size: 16px;
     margin : 5px;
+    
 
 }
 
@@ -109,11 +111,24 @@ list-style: none;
 .center-content{
     flex: 2;
     border-right:1px solid black;
-    margin: 30px;
+    margin-left: 40px;
+    margin-right: 40px;
+    padding: 20px;
 }
 .center-content li a{
    text-decoration: none;
    color: #007BFF;
+}
+.center-content li a:hover{
+    color: #ff8b00;
+}
+.pp{
+    cursor: pointer;
+
+}
+
+.center-content li {
+    margin-bottom: 10px;
 }
 .center-content h1{
     color: #212529;
@@ -214,6 +229,9 @@ text-decoration: underline;
     font-size: 13px;
 }
 
+.pp :hover{
+    color: #ff8b00;
+}
 @media (max-width:600px){
     .navbar {
         flex-direction: column;
