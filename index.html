@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/bf0a581a6d.js" crossorigin="anonymous"></script>
+    <title>AG-GRID</title>
+</head>
+<body>
+    <div class="header">
+        <nav class="navbar">
+            <a href="https://www.ag-grid.com/"><img src="Pictures/ag-grid-logo.svg" widht="235px" height="40px" alt=""></a>
+            <a href="#" class="toggle-button">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </a>
+            <div class="navbar-links">
+              <ul>
+                <li><a href="#">Demo</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Blog</a></li>
+              </ul>
+            </div>
+          </nav>
+    </div>
+    <div class="main">
+        <div class="list-left">
+          
+                <li><a href="#"><i class="fa-solid fa-chevron-right"></i>Get Started</a></li>
+                <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Interface / API</a></li>
+                <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Columns</a></li>
+                <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Rows</a></li>
+                <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Build & Tooling</a></li>
+                <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Layout & Styling</a></li>
+                <li><a href="#"><i class="fa-solid fa-chevron-right"></i>Client-Side Data</a></li>
+                <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Server-Side Data</a></li>
+                <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Server</a></li>
+                <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Selection</a></li>
+                <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Filtering</a></li>
+                <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Rendering</a></li>
+                <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Editing</a></li>
+                <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Group & Pivot</a></li>
+                <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Master Detail</a></li>
+                <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Import & Export</a></li>
+                <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Accessories</a></li>
+                <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Components</a></li>
+                <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Sparklines</a></li>
+                <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Intergrated Charts</a></li>
+                <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Scrolling</a></li>
+                <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Interactivity</a></li>
+                <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Testing & Security</a></li>
+            
+
+
+        </div>
+        <div class="center-content">
+            <h1>JavaScript Data Grid: Grid Interface </h1>
+            <h2>This section details the public interface that your application can use to interact with the grid, including methods properties and events</h2>
+            <p>The grid interface is the combination of the following items:</p>
+            <ul>
+               <li><a href="#">Grid Options:</a> properties and callbacks used to configure the grid, e.g. <code><span class="pink"> pagination = true  and getRowHeight(params)</span></code>.</li>
+                <li><a href="#">Grid API:</a> methods used to interact with the grid after it's created, e.g. <code><span class="pink">api.getSelectedRows().</span></code></li>
+                <li><a href="#">Grid Events</a> events published by the grid to inform applications of changes in state, e.g. <code><span class="pink">rowSelected.</span></code></li>
+               <li><a href="#">Row Node:</a> each row in the grid is represented by a Row Node object, which in turn has a reference to the piece of row data provided by the application. The Row Node wraps the row data item. The Row Node has attributes, methods and events for interacting with the specific row e.g.<code><span class="pink">rowNode.setSelected(true).</span></code></li>
+            </ul>
+            <h3 id="GRIDOPTIONS">Grid Options</h3>
+            <p>The <code><span>gridOptions</span></code> object is a 'one stop shop' for the entire interface into the grid. The GridOptions interface supports a generic parameter for row data as detailed in
+            <span style="color: blue;font-size:20px;margin-top: 0;">Typescript Generics</span></p>
+            <p>The example below shows the different types of items availble on <code><span class="pink">gridOptions</span></code></p>
+            <div class="js-code" style="overflow-x: scroll;">
+                <code><span style="color: blue;">Var </span>gridOptions = {</code>
+                    <br>
+                    <code><span style="color: grey;margin-left: 30px;">//PROPERTIES </span></code>
+                   <br>
+                    <code><span style="color: grey;margin-left: 30px; ">//Objects like myRowData and myColdDefs would be created in your application </span></code>
+                    <br>
+                    <code><span style="margin-left: 30px;">rowData: myRowData,</span></code>
+                    <br>
+                    <code><span style="margin-left: 30px;">columnDefs: myColDefs,</span></code>
+                    <br>
+                    <code><span style="margin-left: 30px;">Pagination: <span style="color: #D04C4D;">true,</span></span></code>
+                    <br>
+                    <code><span style="margin-left: 30px;">rowSelection: <span style="color: #2F9C0A;">'single',</span></span></code>
+                    <br>
+                    <br>
+                    <code><span style="color:grey;margin-left: 30px;">//EVENTS</span></code>
+                    <br>
+                    <code><span style="color:grey;margin-left: 30px;">//Add Event Handlers</span></code>
+                    <br>
+                    <code><span style="color:#2F9C0A;margin-left: 30px;">onRowClicked</span>: Event <span style="color:#A67F59 ;">=></span>console.<span style="color:#2F9C0A;">log</span>(<span style="color:#2F9C0A;">'A row was clicked'</span></span>).</code>
+                    <br>
+                    <code><span style="color:#2F9C0A;margin-left: 30px;">onColumnResized</span>: Event <span style="color:#A67F59 ;">=></span>console.<span style="color:#2F9C0A;">log</span>(<span style="color:#2F9C0A;">'A column was resized'</span></span>),</code>
+                   <br>
+                    <code><span style="color:#2F9C0A;margin-left: 30px;">onGridReady</span>: Event <span style="color:#A67F59 ;">=></span>console.<span style="color:#2F9C0A;">log</span>(<span style="color:#2F9C0A;">'The grid is now ready'</span></span>),</code>
+                    <br>
+                    <br>
+                    <code><span style="color:grey;margin-left: 30px;">//CALLBACKS</span></code>
+                    <code><span style="color: #2F9C0A;">getRowHeight</span><span style="color:#A67F59 ;">:</span>params<span style="color: grey;">(</span>)<span style="color:#A67F59 ;">=></span><span style="color:#D04C4D;"> 25</span></code>
+                    <br>
+                    <code>}</code>
+            </div>
+            <p>Once the grid is intialised, you will also have access to the grid API (<code><span class="pink">api</span></code>) and column API(<code><span class="pink">columnApi</span></code>)on the <code><span class="pink">gridOptions</span></code> object as shown</p>
+            <div class="js-code">
+                <code><span style="color: grey;margin-left: 20px;">//refresh the grid</span></code>
+                <br>
+                <code> <span style="margin-left: 20px;"> gridOptions.api.</span><span style="color:#2F9C0A ;">redrawRows</span><span style="color:grey;">();</span></code>
+                <br>
+                <br>
+                <code><span style="color: grey;margin-left: 20px;">// resize columns in the grid to fit the available space</span></code>
+                <br>
+                <code> <span style="margin-left: 20px;"> gridOptions.columnApi.</span><span style="color:#2F9C0A ;">sizeColumnsToFit</span><span style="color:grey;">();</span></code>
+                
+            </div>
+            <h3>Access the Grid & Column Api</h3>
+            <p>the Grid Api  (both <code><span class="pink">api</span></code> and <code><span class="pink">columnApi</span></code>) will only be available after the <code><span class="pink">gridReady</span></code>event has been fired</p>
+            <p>You can Access the APIs the following ways:</p>
+            <ul>
+                <li>Store them from the <code><span class="pink">gridReady</span></code>  event - they'll be available via the <code><span class="pink">params</span></code> argument passed into the event</li>
+                <li>Provide a <code><span class="pink">gridOptions</span></code>object to the grid pre-creation time. Post-creation the APIs will be available on the<code><span class="pink">gridOptions</span></code> object</li>
+            </ul>
+            <h3 id="LISTENING">Listening to Events</h3>
+            <p>In addition to adding event listeners directly via the <code><span class="pink">gridOptions</span></code> object, it is possible to register for events, similar to registering for events on native DOM elements. This means there are two ways to listen for events: either use the <code><span class="pink">onXXX()</span></code> method on the API (where XXX is replaced with the event name), or register a listener for the event. The latter option allows you to add multiple handlers for the same event. The following example demonstrates the two options:</p>
+            <div class="js-code">
+                <code><span class="grey">//create handler function</span></code>
+                <br>
+                <code><span class="blue">function</span> <span class="green">myRowClicked</span><span class="grey">(</span>event<span class="grey">)</span><span class="grey">{</span></code>
+                    <br>
+                    <code>console.<span class="green">log</span><span class="grey">(</span><span class="green">'The row was clicked'</span><span class="grey">);</span></code>
+                    <br>
+                    <code><span class="grey">}</span></code>
+                    <br>
+                    <br> 
+                    <code><span class="grey">// option 1: use the API </span></code>
+                    <br>
+                    <code>gridOptions.onRowClicked <code><span class="brown"> = </span></code> myRowClickedHandler;</code>
+                    <br>
+                    <br>
+                    <code><span class="grey">// option 2: register the handler</span></code>
+                    <br>
+                    <code>gridOptions.api.<span class="green">addEventListener</span><span class="grey">(</span><span class="green">'rowClicked'</span><span class="grey">,</span>myRowClickedHandler <span class="grey">);</span></code>
+            </div>
+            <h3 id="events">Events are Asynchronous</h3>
+            <p>Grid events are asynchronous so that the state of the grid will be settled by the time your event callback gets invoked.</p>
+            <h3 id="defaultbolean">
+                Default Boolean Properties
+            </h3>
+            <p>Where the property is a boolean (<code><span class="pink">true</span></code>  or <code><span class="pink">false</span></code>), then <code><span class="pink">false</span></code> (or left blank) is the default value. For this reason, on / off items are presented in a way that causes the most common behaviour to be used when the value is <code><span class="pink">false</span></code>. For example,<code><span class="pink">suppressCellFocus</span></code> is named as such because most people will want cell focus to be enabled.</p>
+       <h3 id="nextstep">Next Step</h3>
+       <p>That's it, Doc! Now you know how to interface with the grid. Go now and find out about all the great <span style="color:#1C89FF ;">options</span>,<span style="color:#1C89FF ;">methods</span> and <span style="color:#1C89FF ;">events</span> you can use.</p>
+        </div>
+        <div class="options-right">
+            <h3>Grid Interface</h3>
+            <a href="#GRIDOPTIONS">Grid Options</a>
+            
+            <a href="#GRIDOPTIONS">Listening to events</a>
+            
+            <a href="#events">Events Are Asynchronous</a>
+            
+            <a href="#defaultbolean">Default Boolean Properties</a>
+           
+            <a href="#nextstep">Next Steps</a>
+
+        </div>
+    </div>
+    <footer class="footer" id="footer">
+        <div class="footer-details">
+
+        
+        <div class="doc">
+            <h1>DOCUMENTATION</h1>
+            <div>
+                <li><a href="#">Getting Started</a></li>
+                <li><a href="#">Changelog</a></li>
+                <li><a href="#">Pipeline</a></li>
+                <li><a href="#">Documentation Archive</a></li>
+            </div>
+
+        </div>
+        <div class="support">
+            <h1>SUPPORT</h1>
+            <div>
+                <li><a href="#">Stack Overflow</a></li>
+                <li><a href="#">Licence & Pricing</a></li>
+                <li><a href="#">Support via Zendesk</a></li>
+            </div>
+        </div>
+        <div class="company">
+            <h1>THE COMPANY</h1>
+            <div>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Cookies Policy</a></li>
+            </div>
+        </div>
+        <div class="follow">
+            <h1>FOLLOW</h1>
+            <div>
+                <li><a href="#">Github</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">YouTube</a></li>
+                <li><a href="#">LinkedIn</a></li>
+            </div>
+        </div>
+        </div>
+        <div class="copyrigths">
+            <p>AG Grid Ltd registered in the United Kingdom. Company No. 07318192.</p>
+            <p class="end">© AG Grid Ltd. 2015-2022</p>
+        </div>
+    </footer>
+</body>
+
+</html>
