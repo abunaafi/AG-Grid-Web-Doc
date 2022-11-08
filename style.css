@@ -67,7 +67,16 @@ color: #F8F9FA;
     padding: 1.5rem;
     font-size: 1.3rem;
 }
+.navbar-links li:nth-child(2){
+    /* background-color: red; */
+    border-bottom:3px solid #F8F9FA;
+    margin-bottom: 1px;
+    color: #F8F9FA;
 
+}
+.navbar-links li  .documen{
+    color: #F8F9FA;
+}
 .main{
     display: flex;
     overflow: hidden;
@@ -229,9 +238,7 @@ text-decoration: underline;
     font-size: 13px;
 }
 
-.pp :hover{
-    color: #ff8b00;
-}
+
 @media (max-width:600px){
     .navbar {
         flex-direction: column;
